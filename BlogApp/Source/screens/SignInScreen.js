@@ -3,7 +3,7 @@ import {Text, StyleSheet,View,Image,TouchableOpacity} from 'react-native';
 import { Input, Button } from "react-native-elements";
 import { FontAwesome, Feather, AntDesign ,Ionicons ,Fontisto,Entypo } from "@expo/vector-icons";
 import {AuthContext} from "../provider/AuthProvider"
-import AuthCard from '../shareable/customCard'
+import {AuthCard} from '../shareable/customCard'
 import { getDataJSON } from "../Function/AsyncStorageFunction";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -56,6 +56,7 @@ const SignInScreenActivity=(props) =>{
                                     onPress={async function(){
                                         let UserData=await getDataJSON(Email);
                                         console.log(UserData)
+                                        console.log(Email)
                                         if(UserData.password==Password){
                                             auth.setIsLoggedIn(true)
                                             auth.setCurrentUser(UserData);

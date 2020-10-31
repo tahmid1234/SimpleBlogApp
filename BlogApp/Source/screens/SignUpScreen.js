@@ -3,7 +3,7 @@ import {Text, StyleSheet,View,Image,TouchableOpacity} from 'react-native';
 import { Input, Button } from "react-native-elements";
 import { FontAwesome, Feather, AntDesign ,Ionicons ,Fontisto,Entypo } from "@expo/vector-icons";
 import {AuthContext} from "../provider/AuthProvider"
-import AuthCard from '../shareable/customCard'
+import {AuthCard} from '../shareable/customCard'
 import { storeDataJSON } from "../Function/AsyncStorageFunction";
 
 
