@@ -19,7 +19,7 @@ const SignUpScreenActivity=(props) =>{
                     <AuthCard  >
                    
 
-                        <Text style={styles.titleView}>Welcome to Central Perk !</Text>
+                        <Text style={styles.titleView}>Welcome to Office !</Text>
                         <Input
                              inputStyle={styles.themeColor}
                             leftIcon={<Ionicons name="ios-person" size={24} color="#fc6a03"/>}
@@ -34,7 +34,7 @@ const SignUpScreenActivity=(props) =>{
                                 inputStyle={styles.themeColor}
                                 placeholderTextColor="#fc6a03"
                                 leftIcon={<Ionicons name="ios-school" size={24} color="#fc6a03" />}
-                                placeholder="Student ID"
+                                placeholder="ID"
                                 onChangeText={function (currentInput) {
                                     setSID(currentInput);
                                 }}

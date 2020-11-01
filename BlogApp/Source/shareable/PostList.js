@@ -35,8 +35,8 @@ const PostList =(props)=>{
         let postLiker=await getDataJSON(posts.key+"likes")
         let postComments=await getDataJSON(posts.key+"Comment")
         if(postComments.length>0){
-            console.log("Key"+posts.key)
-        console.log(postComments.length)
+           // console.log("Key"+posts.key)
+       // console.log(postComments.length)
                 setComments(postComments)
                 setCommentCount(postComments.length)
         }
@@ -44,9 +44,10 @@ const PostList =(props)=>{
         if(postLiker.length>0){
         setLikeCount(postLiker.length)
         setLikers(postLiker)
+        setAuthorPostReactions(postReaction)
         }
      
-        setAuthorPostReactions(postReaction)
+       
         setName(response.name)
         setLoading(true)
  
@@ -71,6 +72,7 @@ const PostList =(props)=>{
            <FontAwesome name="comment-o" size={27} color="#fc6a03"  style={styles.commentStyle}
            onPress={function(){
             nav.navigation.navigate("IndivialPost",  {posts,Name,comments,likeCount,commentCount,authorPostReactions,currUser} );
+           
             console.log("commento")
             console.log(likeCount+" pera nai"+ commentCount)
            }}/>

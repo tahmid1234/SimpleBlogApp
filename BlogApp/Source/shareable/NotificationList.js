@@ -22,6 +22,7 @@ const NotificationList=(props)=>{
         setIconName("comments")
         setStatement("commented on your post")
         }
+        
         setCheck(true)
 
     }
@@ -50,7 +51,7 @@ const styles= StyleSheet.create({
     stateMentStyle:{
         fontSize:15,
         marginTop:20,
-        left:120,
+        left:150,
         fontFamily:'serif',
         color:"#c08401",
         position:"absolute"

@@ -21,7 +21,7 @@ const AppDrawer = createDrawerNavigator();
 
 const AppDrawerScreen = () => {
   return (
-    <AppDrawer.Navigator theme={MyTheme}>
+    <AppDrawer.Navigator theme={MyTheme} initialRouteName="Home">
       <AppDrawer.Screen name="Home" component={HomeTabScreen} />
       <AppDrawer.Screen name="Profile" component={ProfileScreenActivity} />
     </AppDrawer.Navigator>

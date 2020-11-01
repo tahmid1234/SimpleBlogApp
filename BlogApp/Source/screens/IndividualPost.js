@@ -5,7 +5,7 @@ import {PostCard} from '../shareable/customCard'
 import { MaterialCommunityIcons,Entypo } from '@expo/vector-icons';
 import {  Input } from "react-native-elements";
 import { FontAwesome ,AntDesign} from '@expo/vector-icons';
-import { storeDataJSON } from "../Function/AsyncStorageFunction";
+import { storeDataJSON,removeData } from "../Function/AsyncStorageFunction";
 import CommentList from '../shareable/CommentList'
 
 const months={
@@ -78,8 +78,9 @@ const IndividualPostScreen=(props)=>{
                 let recentComment={commenter:currentUser,commentBody:currentInputText,commentDate:new Date().getDate()+' '+months[month]+','+new Date().getFullYear(),key:commentsCount}
                 comments.reverse()
                 comments.push(recentComment)
+                
                 storeDataJSON(post.key+"Comment",comments)
-               storeDataJSON(post.Email+"Reaction",authorPostReactions)
+                storeDataJSON(post.Email+"Reaction",authorPostReactions)
                 console.log(post.Email+" "+post.key)
                 console.log(comments)
                 setCommentCount(comments.length)

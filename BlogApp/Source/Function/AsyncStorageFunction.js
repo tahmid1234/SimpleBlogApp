@@ -8,7 +8,7 @@ const storeDataJSON = async (key, value) => {
     const jsonValue = JSON.stringify(value);
     console.log(key)
     await AsyncStorage.setItem(key, jsonValue);
-    alert("Data STored Successfully!"+key);
+    //alert("Data STored Successfully!"+key);
   } catch (error) {
     alert(error);
   }
@@ -24,7 +24,7 @@ const getDataJSON = async (key) => {
      
       return jsonData;
     } else {
-      //alert("No data with this key!"+key);
+      ///alert("No data with this key!"+key);
       return ""
     }
   } catch (error) {

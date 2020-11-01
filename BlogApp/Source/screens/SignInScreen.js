@@ -21,7 +21,7 @@ const SignInScreenActivity=(props) =>{
                     <AuthCard  >
                    
 
-                        <Text style={styles.titleView}>Welcome to Central Perk !</Text>
+                        <Text style={styles.titleView}>Welcome to Office !</Text>
 
                        
                         
