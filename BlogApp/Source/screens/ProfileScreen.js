@@ -1,9 +1,15 @@
 import React from 'react'
 import {Text,Button,View} from 'react-native'
 
-const ProfileScreenActivity=()=>{
+import ScreenHeader from '../shareable/ScreenHeader'
+
+
+const ProfileScreenActivity=(props)=>{
     return(
-        <Text>Hello</Text>
+       <View>
+            <ScreenHeader props ={props} ></ScreenHeader>
+
+       </View>
     )
 }
 

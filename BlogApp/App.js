@@ -30,10 +30,13 @@ const AppDrawerScreen = () => {
 
 const HomeTabScreen = () => {
   return (
+    <AuthContext.Consumer>
+        {(auth) => (
     <HomeTab.Navigator initialRouteName="Home">
       <HomeTab.Screen
         name="Home"
         component={HomeStackScreen}
+        
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ focused }) =>
@@ -46,7 +49,7 @@ const HomeTabScreen = () => {
       />
       <HomeTab.Screen
         name="Notification"
-        component={NotificationScreenActivity}
+        children={()=><NotificationScreenActivity currentUser={auth.CurrentUser} />}
         options={{
           tabBarLabel: "Notifications",
           tabBarIcon: ({ focused }) =>
@@ -62,6 +65,8 @@ const HomeTabScreen = () => {
         }}
       />
     </HomeTab.Navigator>
+     )}
+     </AuthContext.Consumer>
   );
 };
 

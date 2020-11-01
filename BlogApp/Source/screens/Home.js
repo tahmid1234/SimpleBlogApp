@@ -9,6 +9,7 @@ import ScreenHeader from '../shareable/ScreenHeader'
 import { FontAwesome, Feather, AntDesign ,Ionicons ,Fontisto,Entypo } from "@expo/vector-icons";
 import PostList from '../shareable/PostList'
 
+
 const months={
     0:"January",
     1:"February",
@@ -29,6 +30,8 @@ const months={
 
 const HomeScreenActivity=(props)=>{
     
+  console.log(props)
+  console.log("okayy")
   const [RecentPost, setRecentPost] = useState("");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -93,6 +96,7 @@ const HomeScreenActivity=(props)=>{
               title="Post"
                 titleStyle={{color:"white"}}
                 onPress={function () {
+                    posts.reverse()
                     let month=new Date().getMonth()
                     let postDetails={key:posts.length+1,Email:auth.CurrentUser.email,postText:RecentPost,postDate:'Posted on '+new Date().getDate()+' '+months[month]+','+new Date().getFullYear()}
                     
@@ -123,10 +127,11 @@ const HomeScreenActivity=(props)=>{
             renderItem={function({ item } ){
               //console.log("Render")
               //console.log(posts)
-              console.log({props})
+              console.log(posts.length+" post length")
+             
               return (
                
-                 <PostList posts={item} nav={props}/>
+                 <PostList posts={item} nav={props} currentUser={auth.CurrentUser}/>
                  
                  )
           }}
